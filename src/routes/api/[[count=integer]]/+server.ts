@@ -6,8 +6,11 @@ export const GET = ((request) => {
 	const count =
 		request.params.count !== undefined ? Number.parseInt(request.params.count) : quotes.length;
 
-	return json({
-		count,
-		data: getQuotes(count)
+	const ret = { count, data: getQuotes(count) };
+	return json(ret, {
+		headers: {
+			'Access-Control-Request-Method': 'GET',
+			'Access-Control-Allow-Origin': '*'
+		}
 	});
 }) satisfies RequestHandler;
