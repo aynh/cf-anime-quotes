@@ -1,3 +1,9 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+</script>
+
 <main class="content">
 	<h1>cf-anime-quotes</h1>
 	<p>HTTP API to get anime quotes.</p>
@@ -12,7 +18,7 @@
 			<a href="/api" target="_blank">goto</a>
 			<p>
 				Returns all the quotes available, for a total of
-				<span class="alternative">7360</span> quotes.
+				<span class="alternative">{data.totalQuotes}</span> quotes.
 			</p>
 		</li>
 		<li>
